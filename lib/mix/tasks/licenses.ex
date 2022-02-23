@@ -57,7 +57,7 @@ defmodule Mix.Tasks.Licenses do
       ])
 
     rows
-    |> TableRex.quick_render!(headers)
+    |> Licensir.TableRex.quick_render!(headers)
     |> file_touch()
     |> output()
   end
