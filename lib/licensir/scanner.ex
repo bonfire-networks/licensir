@@ -64,7 +64,7 @@ defmodule Licensir.Scanner do
 
   defp filter_top_level(deps, opts) do
     if Keyword.get(opts, :top_level_only) do
-      Enum.filter(deps, &(&1.dep.top_level))
+      Enum.filter(deps, & &1.dep.top_level)
     else
       deps
     end
@@ -128,6 +128,8 @@ defmodule Licensir.Scanner do
         end
       end)
 
-    Map.get(@human_names, license_atom)
+    # IO.inspect(license_atom: license_atom)
+
+    Map.get(@human_names, license_atom, to_string(license_atom))
   end
 end

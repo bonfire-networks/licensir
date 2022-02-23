@@ -23,7 +23,6 @@ defmodule Licensir.FileAnalyzer do
   ]
 
   def analyze(dir_path) do
-
     Enum.find_value(@license_files, fn file_name ->
       dir_path
       |> Path.join(file_name)
